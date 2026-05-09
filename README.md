@@ -25,6 +25,18 @@ Install one skill:
 npx skills@latest add frnyb/codex-skills --skill create-backlog --agent codex --global
 ```
 
+Update skills from this repo by re-running the install command:
+
+```bash
+npx skills@latest add frnyb/codex-skills --agent codex --global
+```
+
+Or update all tracked skills:
+
+```bash
+npx skills@latest update
+```
+
 ## Install skills manually
 
 Use the installer to copy all repository skills into a Codex environment:

@@ -5,14 +5,16 @@ description: Implement a backlog document task by task, moving items through Inc
 
 # Process Backlog
 
-Implement a backlog document end to end without stopping until `Incomplete` and `In-Progress` are empty, unless blocked by missing information, failing external dependencies, or explicit user direction.
+Implement a backlog document end to end without stopping until `Incomplete` and `In-Progress` are empty, unless blocked by an unexpected external dependency or explicit user direction.
 
 ## Readiness Check
 
-Before coding, read the backlog and inspect the relevant code. Decide whether the next tasks are concrete enough to implement.
+Before coding, read the full backlog and inspect the relevant code. Decide whether every remaining task is concrete enough to implement unattended.
 
+- Complete all interviewing, clarification, code inspection, and backlog enrichment before moving any task to `In-Progress`.
 - If the backlog is vague, use the `create-backlog` workflow to interview, inspect the codebase, and update the referenced backlog in place before implementation.
-- Do not start coding from ambiguous tasks.
+- Do not start coding from ambiguous tasks or unresolved product decisions.
+- Once implementation begins, aim to complete the backlog without returning to the user for ordinary clarification.
 - Preserve the backlog's structure and update only task status, details, and newly discovered implementation facts.
 
 ## Processing Loop
@@ -38,6 +40,7 @@ Repeat this sequence until no tasks remain in `Incomplete` or `In-Progress`:
 
 - Keep working until the backlog is fully processed.
 - Prefer small, focused commits of behavior in the code, but complete each backlog task end to end.
-- If a task reveals that the backlog is wrong, update the backlog and continue from the corrected plan.
-- If a blocker cannot be solved locally, leave the blocked task in `In-Progress`, document the blocker precisely, and ask the user for the missing decision or dependency.
+- If a task reveals that the backlog is wrong, update the backlog and continue from the corrected plan when the correction is locally decidable from the agreed design and codebase.
+- Ask the user during implementation only for blockers that cannot be resolved from the backlog, codebase, tests, or reasonable implementation judgment.
+- If such a blocker occurs, leave the blocked task in `In-Progress`, document the blocker precisely, and ask for the missing decision or dependency.
 - Never move a task to `Completed` without implementation, review, acceptance verification, and applicable tests.

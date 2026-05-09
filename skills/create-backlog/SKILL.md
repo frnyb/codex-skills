@@ -5,6 +5,8 @@ description: Create or update a detailed implementation backlog for a feature th
 
 # Create Backlog
 
+Interview workflow adapted from Matt Pocock's original `grill-me` skill.
+
 Create or update a backlog document for a feature by interviewing the user, inspecting the codebase, and continuously refining the document until the design and task breakdown are concrete enough to implement.
 
 ## Workflow

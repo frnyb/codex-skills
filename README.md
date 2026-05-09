@@ -11,7 +11,21 @@ skills/
     ...optional skill files...
 ```
 
-## Install skills
+## Install skills with npx
+
+Install all skills globally for Codex:
+
+```bash
+npx skills@latest add frnyb/codex-skills --agent codex --global
+```
+
+Install one skill:
+
+```bash
+npx skills@latest add frnyb/codex-skills --skill create-backlog --agent codex --global
+```
+
+## Install skills manually
 
 Use the installer to copy all repository skills into a Codex environment:
 

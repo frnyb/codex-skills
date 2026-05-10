@@ -21,6 +21,8 @@ Before coding, read the full backlog and inspect the relevant code. Decide wheth
 
 Repeat this sequence until no tasks remain in `Incomplete` or `In-Progress`:
 
+Do not exit this loop or send a final response after starting implementation unless a Stop Condition applies.
+
 1. Refresh these skill instructions before each task cycle to stay aligned during long runs.
 2. Move the next task from `Incomplete` to `In-Progress` in the backlog document.
 3. Implement that task completely and carefully.
@@ -54,6 +56,7 @@ If a user asks for status while processing, answer briefly, then continue proces
 
 - Keep working until the backlog is fully processed.
 - Prefer small, focused commits of behavior in the code, but complete each backlog task end to end.
+- If a task is too large for one clean slice, split it inside the backlog and continue; do not stop at the split.
 - If a task reveals that the backlog is wrong, update the backlog and continue from the corrected plan when the correction is locally decidable from the agreed design and codebase.
 - Ask the user during implementation only for blockers that cannot be resolved from the backlog, codebase, tests, or reasonable implementation judgment.
 - If such a blocker occurs, leave the blocked task in `In-Progress`, document the blocker precisely, and ask for the missing decision or dependency.

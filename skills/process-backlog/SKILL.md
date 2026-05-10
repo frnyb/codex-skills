@@ -33,8 +33,22 @@ Repeat this sequence until no tasks remain in `Incomplete` or `In-Progress`:
 6. Verify every task acceptance checklist item.
 7. If completing this task completes a phase, verify the phase acceptance criteria and any phase-level tests.
 8. Fix any issues found during review or verification.
-9. Move the task from `In-Progress` to `Completed` only when fully resolved.
+9. Move the task from `In-Progress` to `Completed` only when fully resolved. Do not send a final response while any item remains in `In-Progress` or `Incomplete`; use brief progress updates only.
 10. Update the completed task with useful implementation notes, changed files, and verification results.
+
+## Stop Conditions
+
+A final response is allowed only when one of these is true:
+
+- `Incomplete` and `In-Progress` are both empty.
+- A blocker cannot be resolved from code, tests, docs, backlog, or reasonable engineering judgment.
+- The user explicitly says stop, pause, summarize only, or asks a new conflicting task.
+
+Passing a subset of tests, finishing a phase, completing a long task chunk, context pressure, or reaching a useful checkpoint is not a stop condition.
+
+If work is extensive, continue across multiple tool cycles. Do not convert partial progress into a final summary.
+
+If a user asks for status while processing, answer briefly, then continue processing unless they explicitly ask to pause or stop.
 
 ## Quality Rules
 

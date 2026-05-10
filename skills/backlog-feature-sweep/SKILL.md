@@ -25,6 +25,12 @@ Run the complete feature workflow: create a backlog, verify it is ready for unat
    - Refresh the processing instructions before each task cycle.
    - Continue until both `Incomplete` and `In-Progress` are empty.
 
+## Stop Conditions
+
+A final response is allowed only when `Incomplete` and `In-Progress` are both empty, a blocker cannot be resolved from code, tests, docs, backlog, or reasonable engineering judgment, or the user explicitly says stop, pause, summarize only, or gives a new conflicting task.
+
+Passing a subset of tests, finishing a phase, completing a long task chunk, context pressure, or reaching a useful checkpoint is not a stop condition. If work is extensive, continue across multiple tool cycles and use brief progress updates instead of final summaries.
+
 ## Operating Rules
 
 - Keep the backlog document as the source of truth throughout the sweep.
